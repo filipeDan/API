@@ -1,0 +1,238 @@
+/* =============================================
+   RESET E ESTILOS GLOBAIS
+   ============================================= */
+/* Remove margens e preenchimentos padrão de todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que larguras considerem bordas e preenchimentos */
+  scroll-behavior: smooth; /* Facilita navegação suave */
+}
+
+/* Estilo global para o corpo da página */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e moderna */
+  background-color: #dd1b1bf8; /* Vermelho vibrante inspirado na capa do Superman */
+  color: #fff; /* Texto branco para contraste */
+  line-height: 1.6; /* Melhora a legibilidade */
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra interna para profundidade */
+  transition: background-color 0.3s; /* Transição suave ao alterar o tema */
+}
+
+/* =============================================
+     LAYOUT E CONTAINERS
+     ============================================= */
+/* Centraliza o conteúdo e limita a largura máxima */
+.container {
+  max-width: 1200px; /* Define largura máxima para layouts maiores */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 40px 20px; /* Adiciona espaçamento interno */
+}
+
+/* =============================================
+     CABEÇALHO
+     ============================================= */
+/* Configura layout do cabeçalho */
+header {
+  display: flex; /* Organiza itens em linha */
+  justify-content: space-between; /* Espaça itens igualmente */
+  align-items: center; /* Alinha verticalmente ao centro */
+  margin-bottom: 30px;
+  padding: 15px 20px; /* Adiciona espaçamento interno */
+  background-color: rgba(243, 238, 238, 0.993); /* Fundo claro */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(247, 245, 245, 0.527); /* Adiciona sombra leve */
+}
+
+/* Título principal do cabeçalho */
+h1 {
+  color: #261a91; /* Azul escuro para destaque */
+  font-size: 2.5rem; /* Maior para maior destaque */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra escura para destacar texto */
+  position: relative; /* Necessário para o pseudo-elemento ::before */
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.vhv.rs/dpng/d/449-4494581_superman-symbol-download-png-image-superman-man-of.png'); /* Caminho para a imagem */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1; /* Define a opacidade para quase transparente */
+  transform: translate(50%, -50%); /* Centraliza a imagem */
+  z-index: 52; /* Coloca a imagem atrás do texto */
+}
+
+/* =============================================
+     BOTÕES
+     ============================================= */
+/* Estilo para botões principais */
+.btn-primary {
+  background-color: #3498db; /* Azul vibrante */
+  color: rgb(8, 4, 20); /* Cor do texto branca */
+  border: none; /* Sem borda */
+  padding: 10px 25px; /* Aumenta tamanho do botão */
+  border-radius: 8px; /* Bordas arredondadas para suavizar */
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+  transition: background-color 0.3s, transform 0.2s; /* Suaviza mudanças */
+}
+
+/* Efeito ao passar o cursor no botão */
+.btn-primary:hover {
+  background-color: #2980b9; /* Azul mais escuro no hover */
+  transform: scale(1.05); /* Amplia ligeiramente para dar feedback visual */
+}
+
+/* Botão de excluir com estilo de alerta */
+.btn-delete {
+  background-color: #e74c3c; /* Vermelho para simbolizar ação destrutiva */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px; /* Mesmo estilo arredondado */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b; /* Vermelho mais escuro no hover */
+  transform: scale(1.05);
+}
+
+/* =============================================
+     GALERIA DE FOTOS
+     ============================================= */
+/* Configura o layout da grade de fotos */
+.photo-grid {
+  display: grid; /* Layout baseado em grade */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsivo para ajustar colunas automaticamente */
+  gap: 20px; /* Espaçamento entre os elementos */
+  padding: 20px 0;
+}
+
+/* Estilo para os cartões de fotos */
+.photo-card {
+  background: white;
+  border-radius: 15px; /* Bordas mais arredondadas para suavidade */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.4s, box-shadow 0.4s; /* Transições elegantes */
+  position: relative; /* Necessário para o pseudo-elemento ::before */
+}
+
+.photo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.vhv.rs/dpng/d/449-4494581_superman-symbol-download-png-image-superman-man-of.png'); /* Caminho para a imagem */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1; /* Define a opacidade para quase transparente */
+  z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+/* Animação de elevação ao passar o mouse */
+.photo-card:hover {
+  transform: translateY(-10px); /* Move ligeiramente para cima */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Adiciona sombra mais forte */
+}
+
+/* Ajusta o estilo das imagens no cartão */
+.photo-card img {
+  width: 100%;
+  height: 300px; /* Altura consistente */
+  object-fit: cover; /* Garante corte proporcional */
+  border-top-left-radius: 15px; /* Continua bordas arredondadas */
+  border-top-right-radius: 15px;
+  border: 5px solid rgba(255, 255, 255, 0.8); /* Borda branca translúcida */
+  box-shadow: 0 4px 10px rgba(180, 178, 37, 0.5); /* Sombra externa para profundidade */
+}
+
+/* Informações sobre a foto */
+.photo-info {
+  padding: 15px; /* Espaçamento interno */
+}
+
+/* Nome da foto */
+.photo-name {
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative; /* Necessário para o pseudo-elemento ::before */
+}
+
+.photo-name::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.vhv.rs/dpng/d/449-4494581_superman-symbol-download-png-image-superman-man-of.png'); /* Caminho para a imagem */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 10; /* Define a opacidade para quase transparente */
+  transform: translate(-50%, -50%); /* Centraliza a imagem */
+  z-index: 5; /* Coloca a imagem atrás do texto */
+}
+
+/* Mensagem de "sem fotos" */
+.no-photos {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem; /* Tamanho maior para destaque */
+  color: #666; /* Cor cinza suave */
+  grid-column: 1 / -1; /* Ocupa a grade inteira */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para destacar texto */
+}
+
+/* =============================================
+     MODAL DE UPLOAD
+     ============================================= */
+/* Fundo do modal */
+.modal {
+  display: none; /* Inicialmente escondido */
+  position: fixed; /* Fica fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  z-index: 1000; /* Fica acima de outros elementos */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: white;
+  margin: 10% auto; /* Centraliza vertical e horizontalmente */
+  padding: 25px; /* Adiciona espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  width: 90%; /* Largura máxima para responsividade */
+  max-width: 500px; /* Não ultrapassa 500px */
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out; /* Animação suave ao abrir */
+}
+footer{
+  display: flex;
+  justify-content: center;/* Centraliza horizontalmente */
+  align-items: center;/* Centraliza verticalmente */
+  height: 100vh;/* Ajuste conforme necessário */
+}
+footer h2{
+  color: rgba(7, 58, 224, 0.7);
+  text-align: center;
+  font-weight: bold;
+  font-size: 100px;
+}
