@@ -12,7 +12,7 @@
 /* Estilo global para o corpo da página */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e moderna */
-  background-color: #dd1b1bf8; /* Vermelho vibrante inspirado na capa do Superman */
+  background-color: #e44e4ef8; /* Vermelho vibrante inspirado na capa do Superman */
   color: #fff; /* Texto branco para contraste */
   line-height: 1.6; /* Melhora a legibilidade */
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra interna para profundidade */
@@ -63,7 +63,7 @@ h1::before {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.1; /* Define a opacidade para quase transparente */
+  opacity: 0.2; /* Define a opacidade para quase transparente */
   transform: translate(50%, -50%); /* Centraliza a imagem */
   z-index: 52; /* Coloca a imagem atrás do texto */
 }
@@ -73,7 +73,7 @@ h1::before {
      ============================================= */
 /* Estilo para botões principais */
 .btn-primary {
-  background-color: #3498db; /* Azul vibrante */
+  background-color: #0a0ef3; /* Azul vibrante */
   color: rgb(8, 4, 20); /* Cor do texto branca */
   border: none; /* Sem borda */
   padding: 10px 25px; /* Aumenta tamanho do botão */
@@ -86,7 +86,7 @@ h1::before {
 
 /* Efeito ao passar o cursor no botão */
 .btn-primary:hover {
-  background-color: #2980b9; /* Azul mais escuro no hover */
+  background-color: #c6f00b; /* Azul mais escuro no hover */
   transform: scale(1.05); /* Amplia ligeiramente para dar feedback visual */
 }
 
@@ -95,7 +95,7 @@ h1::before {
   background-color: #e74c3c; /* Vermelho para simbolizar ação destrutiva */
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 20px; /* ajusta o tamanho do botão de excluir */
   border-radius: 8px; /* Mesmo estilo arredondado */
   cursor: pointer;
   font-weight: bold;
@@ -104,7 +104,7 @@ h1::before {
 
 .btn-delete:hover {
   background-color: #c0392b; /* Vermelho mais escuro no hover */
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* =============================================
@@ -122,7 +122,7 @@ h1::before {
 .photo-card {
   background: white;
   border-radius: 15px; /* Bordas mais arredondadas para suavidade */
-  overflow: hidden;
+  overflow: hidden;/* Garante que nenhum conteúdo ultrapasse as bordas arredondadas, o que é importante para a consistência do design. */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   transition: transform 0.4s, box-shadow 0.4s; /* Transições elegantes */
   position: relative; /* Necessário para o pseudo-elemento ::before */
@@ -224,11 +224,43 @@ h1::before {
   position: relative;
   animation: fadeIn 0.5s ease-in-out; /* Animação suave ao abrir */
 }
+/* Estilo para o toast  - ADICIONADO */
+.toast{
+display: none;
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+background-color: #333;
+color: #fff;
+padding: 10px 20px;
+border-radius: 5px;
+font-size: 16px;
+opacity: 0.9;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: opacity 0.3 ease-in-out;/* apareça e desapareça suavemente, pode adicionar uma animação de transição. */
+}
+/* Estilo do botão de exclusão */
+.btn-delete {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.btn-delete:hover {
+  background-color: #e60000;
+}
+
 footer{
   display: flex;
   justify-content: center;/* Centraliza horizontalmente */
   align-items: center;/* Centraliza verticalmente */
-  height: 100vh;/* Ajuste conforme necessário */
+  min-height: 100px;/* Ajuste conforme necessário */
+  padding: 20px 0;
 }
 footer h2{
   color: rgba(7, 58, 224, 0.7);

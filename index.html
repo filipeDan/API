@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galeria de Fotos</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="container">
       <header>
         <h1>Galeria de Fotos</h1>
-        <button id="addPhotoBtn" class="btn-primary">Adicionar Foto</button>
+        <button id="addPhotoBtn" class="btn-primary">Adicionar Foto</button>       
       </header>
+
       <div id="photoGrid" class="photo-grid"></div>
     </div>
+    <!-- modal de upload -->
     <div id="uploadModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -31,12 +34,15 @@
         </form>
       </div>
     </div>
+    <!-- Toast de Feedback -->
     <div id="toast" class="toast"></div>
-    <script src="script.js"></script>
+    
     <footer>
-      <div class="Nome">
+       <div class="Nome">
         <h2>SUPER MAN</h2>
-      </div>
+      </div> 
     </footer>
+
+    
   </body>
 </html>
