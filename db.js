@@ -1,34 +1,27 @@
-//se caso tiver algum erro no DB
-
-
-//Importando PARA INTERAGIR COM o MONGOOSE
+// Importa para interagir com o DB
 const mongoose = require("mongoose");
 
-//carrega variaveis de ambientes do arquivos .ENV
+// Carrega variáveis de ambiente do arquivo .ENV
 require("dotenv").config();
 
-
-//CONFIGURA O MONGOOSE PARA PERITIT CONSULTA (RESTRITIVAS)
+// Configurando para permitir consultas (Restritas)
 mongoose.set("strictQuery", true);
 
-//CREDENCIAIS 
+// Credenciais
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
 
-//FUNÇÃO PARA CONECTAR DO BANCO DE DADOS
+// Função para no DB
 async function main() {
-    await mongoose.connect( `mongodb+srv://${dbUser}:${dbPassword}@clusterapi.23ri3.mongodb.net/?retryWrites=true&w=majority&appName=ClusterAPI`
-          // AQUI COLOCA O LINK QUE TEM NO MONGOSSE
-        // LINK DO SITE MONGODB
-
-    ); 
-    console.log("Conectou ao banco de dados!");
+  await mongoose.connect(
+    // Link do Mongo
+    `mongodb+srv://${dbUser}:${dbPassword}@clusterapi.23ri3.mongodb.net/?retryWrites=true&w=majority&appName=ClusterAPI`
+  );
+  // Exibe ao usuario que realizou a conexão
+  console.log("Conectou ao banco de dados!");
 }
+// Exibe a msg ao usuário com erro
+main().catch((err) => console.log(err));
 
-//caso ocorra mostra uma msg
-main().catch((err)=> console.log(err));
-
-
-//exportando a função para utilizar em outro arquivo
+// Exporta a função para utilizar em outro arquivo
 module.exports = main;
-
