@@ -58,7 +58,7 @@ exports.getImage = async (req, res) => {
   }
 };
 
-// Função para remover uma imagem do DB
+// Função para remover uma imagem do DB ----- ADICIONADO -------
 exports.remove = async (req, res) => {
   try {
     // Busca a imagem no DB, com a ID enviada
